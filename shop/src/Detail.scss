@@ -1,0 +1,78 @@
+// 모든 페이지의 CSS reset
+body {
+  margin : 0;
+}
+// 모든 페이지의 CSS reset
+div {
+  box-sizing: border-box;
+}
+// --------------------------------------------
+/* SASS 문법 */
+/* 
+1. 변수에 데이터를 저장해서 쓰자 
+$변수명 : 변수에 넣을 값
+SASS 문법을 쓰면 CSS 문법으로 컴파일 해서 js에 전달해준다.
+
+2. @import 파일 경로
+
+*/
+
+$mainColor : #4d4c4c;
+
+.detail {
+  color: $mainColor;
+}
+
+// @mixin 함수() {
+//   background-color: #d1d1d1;
+//   padding: 20px;
+//   border-radius: 10px;
+//   max-width: 500px; // 창 크기에 상관 없이 크기 고정.
+//   width: 100%;
+//   margin: auto; // 가운데 정렬
+//   p{
+//     margin-bottom: 0;
+//   }
+// }
+
+
+.my-alert {
+  background-color: #d1d1d1;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; // 창 크기에 상관 없이 크기 고정.
+  width: 100%;
+  margin: 20px auto; // 가운데 정렬
+  p{
+    margin-bottom: 0;
+  }
+}
+
+.my-alert-blue {
+  @extend .my-alert; // 복붙하지 말고 extend 해서 속성 가져오기 
+  // @include 함수() extend 대신에 mixin 함수 써도 됨
+  background-color: #2020d1; // 바꾸고자 하는 속성만 바꾸기
+}
+
+// 3. nesting
+
+// (1)
+// div.container h4 {
+//   color: blue;
+// }
+
+// div.container p {
+//   color: red;
+// }
+
+
+// (2)
+// div.container {
+//   h4 {
+//     color: blue;
+//   }
+//   p {
+//     color: red;
+//   }
+// }
+
